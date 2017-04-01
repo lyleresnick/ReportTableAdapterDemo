@@ -2,7 +2,7 @@
 
 import UIKit
 
-class AccountDetailsTransactionListAdapter: NSObject {
+class TransactionListAdapter: NSObject {
 
     fileprivate var rowList = [Row]()
     private var odd = false
@@ -13,7 +13,7 @@ class AccountDetailsTransactionListAdapter: NSObject {
         return formatter
     }
     
-    private static let inboundDateFormat = AccountDetailsTransactionListAdapter.dateFormat( format: "yyyy'-'MM'-'dd" )
+    private static let inboundDateFormat = TransactionListAdapter.dateFormat( format: "yyyy'-'MM'-'dd" )
 
     func appendHeader(title: String ) {
         rowList.append( HeaderRow( title: title ) )
@@ -22,7 +22,7 @@ class AccountDetailsTransactionListAdapter: NSObject {
     func appendSubheader(date inboundDate: String) {
 
         odd = !odd
-        let date = AccountDetailsTransactionListAdapter.inboundDateFormat.date( from: inboundDate)!
+        let date = TransactionListAdapter.inboundDateFormat.date( from: inboundDate)!
         rowList.append( SubheaderRow( date: date, odd: odd ) )
     }
 
@@ -45,7 +45,7 @@ class AccountDetailsTransactionListAdapter: NSObject {
     }
 }
 
-extension AccountDetailsTransactionListAdapter: UITableViewDataSource {
+extension TransactionListAdapter: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -61,7 +61,7 @@ extension AccountDetailsTransactionListAdapter: UITableViewDataSource {
     }
 }
 
-extension AccountDetailsTransactionListAdapter: UITableViewDelegate {
+extension TransactionListAdapter: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return rowList[ indexPath.row ].height
@@ -180,7 +180,7 @@ private struct HeaderRow: Row {
 
 private struct SubheaderRow: Row {
 
-    private static let outboundDateFormat = AccountDetailsTransactionListAdapter.dateFormat( format: "MMM' 'dd', 'yyyy" )
+    private static let outboundDateFormat = TransactionListAdapter.dateFormat( format: "MMM' 'dd', 'yyyy" )
 
     let title:  String
     let odd: Bool

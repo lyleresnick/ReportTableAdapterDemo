@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="pb9-nM-BWR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="pb9-nM-BWR">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Transaction Details-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="AccountDetailsTransactionViewController" customModule="ReportListDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="TransactionListViewController" customModule="ReportTableAdapterDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -25,7 +25,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="header" rowHeight="50" id="Bej-hw-nQ9" customClass="HeaderCell" customModule="ReportListDemo" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="header" rowHeight="50" id="Bej-hw-nQ9" customClass="HeaderCell" customModule="ReportTableAdapterDemo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Bej-hw-nQ9" id="JIM-Xq-JZH">
@@ -49,7 +49,7 @@
                                             <outlet property="titleLabel" destination="UwP-oO-9Xf" id="tXz-eF-Ywt"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="subheader" id="RAb-SX-mTq" customClass="SubheaderCell" customModule="ReportListDemo" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="subheader" id="RAb-SX-mTq" customClass="SubheaderCell" customModule="ReportTableAdapterDemo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="78" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RAb-SX-mTq" id="wOk-Ql-ttr">
@@ -72,7 +72,7 @@
                                             <outlet property="titleLabel" destination="F1h-8c-rrX" id="Iy2-gv-Vzi"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="detail" id="ubN-Kf-Nfd" customClass="DetailCell" customModule="ReportListDemo" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="detail" id="ubN-Kf-Nfd" customClass="DetailCell" customModule="ReportTableAdapterDemo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="122" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ubN-Kf-Nfd" id="A8T-NR-cdo">
@@ -104,7 +104,7 @@
                                             <outlet property="descriptionLabel" destination="tuJ-67-3WF" id="aje-IO-oGV"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="subfooter" rowHeight="12" id="Wni-il-Coz" customClass="SubfooterCell" customModule="ReportListDemo" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="subfooter" rowHeight="12" id="Wni-il-Coz" customClass="SubfooterCell" customModule="ReportTableAdapterDemo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="166" width="375" height="12"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Wni-il-Coz" id="BPI-uv-oHe">
@@ -112,7 +112,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="footer" id="qVW-Qo-6aY" customClass="FooterCell" customModule="ReportListDemo" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="footer" id="qVW-Qo-6aY" customClass="FooterCell" customModule="ReportTableAdapterDemo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="178" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qVW-Qo-6aY" id="WYQ-V7-WAz">
@@ -143,7 +143,7 @@
                                             <outlet property="totalLabel" destination="9Oe-Jd-rag" id="8fQ-0x-eRK"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="message" rowHeight="70" id="vJj-jB-TdO" customClass="MessageCell" customModule="ReportListDemo" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="message" rowHeight="70" id="vJj-jB-TdO" customClass="MessageCell" customModule="ReportTableAdapterDemo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="222" width="375" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vJj-jB-TdO" id="slc-GK-gK4">
@@ -184,11 +184,12 @@
                     </view>
                     <navigationItem key="navigationItem" title="Transaction Details" id="HGK-DS-EWx"/>
                     <connections>
+                        <outlet property="adapter" destination="mGm-8x-8yT" id="rQa-wo-2sB"/>
                         <outlet property="tableView" destination="kDh-kr-cA1" id="T2O-Fn-V30"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <customObject id="mGm-8x-8yT" customClass="AccountDetailsTransactionListAdapter" customModule="ReportListDemo" customModuleProvider="target"/>
+                <customObject id="mGm-8x-8yT" customClass="TransactionListAdapter" customModule="ReportTableAdapterDemo" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="775.20000000000005" y="69.715142428785612"/>
         </scene>

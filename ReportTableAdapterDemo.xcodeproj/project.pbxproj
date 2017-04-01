@@ -11,8 +11,8 @@
 		B3E8AE671E711F7E00133D76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3E8AE651E711F7E00133D76 /* Main.storyboard */; };
 		B3E8AE691E711F7E00133D76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3E8AE681E711F7E00133D76 /* Assets.xcassets */; };
 		B3E8AE6C1E711F7E00133D76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3E8AE6A1E711F7E00133D76 /* LaunchScreen.storyboard */; };
-		B3E8AE851E711FC800133D76 /* AccountDetailsTransactionListAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E8AE811E711FC800133D76 /* AccountDetailsTransactionListAdapter.swift */; };
-		B3E8AE861E711FC800133D76 /* AccountDetailsTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E8AE821E711FC800133D76 /* AccountDetailsTransactionViewController.swift */; };
+		B3E8AE851E711FC800133D76 /* TransactionListAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E8AE811E711FC800133D76 /* TransactionListAdapter.swift */; };
+		B3E8AE861E711FC800133D76 /* TransactionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E8AE821E711FC800133D76 /* TransactionListViewController.swift */; };
 		B3E8AE871E711FC800133D76 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E8AE831E711FC800133D76 /* Color.swift */; };
 		B3E8AE881E711FC800133D76 /* TransactionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E8AE841E711FC800133D76 /* TransactionModel.swift */; };
 /* End PBXBuildFile section */
@@ -35,8 +35,8 @@
 		B3E8AE6B1E711F7E00133D76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B3E8AE6D1E711F7E00133D76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B3E8AE721E711F7F00133D76 /* ReportTableAdapterDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReportTableAdapterDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B3E8AE811E711FC800133D76 /* AccountDetailsTransactionListAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountDetailsTransactionListAdapter.swift; sourceTree = "<group>"; };
-		B3E8AE821E711FC800133D76 /* AccountDetailsTransactionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountDetailsTransactionViewController.swift; sourceTree = "<group>"; };
+		B3E8AE811E711FC800133D76 /* TransactionListAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionListAdapter.swift; sourceTree = "<group>"; };
+		B3E8AE821E711FC800133D76 /* TransactionListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionListViewController.swift; sourceTree = "<group>"; };
 		B3E8AE831E711FC800133D76 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		B3E8AE841E711FC800133D76 /* TransactionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -79,8 +79,8 @@
 		B3E8AE601E711F7E00133D76 /* ReportTableAdapterDemo */ = {
 			isa = PBXGroup;
 			children = (
-				B3E8AE811E711FC800133D76 /* AccountDetailsTransactionListAdapter.swift */,
-				B3E8AE821E711FC800133D76 /* AccountDetailsTransactionViewController.swift */,
+				B3E8AE821E711FC800133D76 /* TransactionListViewController.swift */,
+				B3E8AE811E711FC800133D76 /* TransactionListAdapter.swift */,
 				B3E8AE831E711FC800133D76 /* Color.swift */,
 				B3E8AE841E711FC800133D76 /* TransactionModel.swift */,
 				B3E8AE611E711F7E00133D76 /* AppDelegate.swift */,
@@ -200,8 +200,8 @@
 				B3E8AE881E711FC800133D76 /* TransactionModel.swift in Sources */,
 				B3E8AE621E711F7E00133D76 /* AppDelegate.swift in Sources */,
 				B3E8AE871E711FC800133D76 /* Color.swift in Sources */,
-				B3E8AE861E711FC800133D76 /* AccountDetailsTransactionViewController.swift in Sources */,
-				B3E8AE851E711FC800133D76 /* AccountDetailsTransactionListAdapter.swift in Sources */,
+				B3E8AE861E711FC800133D76 /* TransactionListViewController.swift in Sources */,
+				B3E8AE851E711FC800133D76 /* TransactionListAdapter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

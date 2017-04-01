@@ -2,31 +2,24 @@
 
 import UIKit
 
- class AccountDetailsTransactionViewController: UIViewController {
+ class TransactionListViewController: UIViewController {
     
     @IBOutlet var tableView: UITableView!
-    let adapter = AccountDetailsTransactionListAdapter()
+    @IBOutlet weak var adapter: TransactionListAdapter!
 
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        initializeListView()
+        initializeFromTwoStreams()
     }
 
-    private func initializeListView() {
+    private func initializeFromTwoStreams() {
 
-        initializeAdapter( adapter: adapter )
-        tableView.dataSource = adapter
-        tableView.delegate = adapter
+        appendTransactions(transactions: authorizedData, title: "Authorized")
+        appendTransactions(transactions: postedData, title: "Posted")
     }
 
-    private func initializeAdapter(adapter: AccountDetailsTransactionListAdapter ) {
-
-        appendTransactions(adapter: adapter, transactions: authorizedData, title: "Authorized")
-        appendTransactions(adapter: adapter, transactions: postedData, title: "Posted")
-    }
-
-    private func appendTransactions(  adapter: AccountDetailsTransactionListAdapter,  transactions: [TransactionModel]?, title: String ) {
+    private func appendTransactions(transactions: [TransactionModel]?, title: String) {
 
         adapter.appendHeader( title: "\(title) Transactions" )
 
