@@ -35,11 +35,16 @@ class TransactionListAdapter: NSObject {
     }
 
     func appendFooter(total: String) {
-
+        
         odd = !odd
         rowList.append(FooterRow(total: total, odd: odd))
     }
-
+    
+    func appendGrandFooter(grandTotal: String) {
+        
+        rowList.append(GrandFooterRow(grandTotal: grandTotal))
+    }
+    
     func appendMessage(message: String) {
         rowList.append(MessageRow(message: message))
     }
@@ -131,14 +136,25 @@ class SubfooterCell: UITableViewCell, TransactionCell {
 }
 
 class FooterCell: UITableViewCell, TransactionCell {
-
+    
     @IBOutlet private var totalLabel: UILabel!
-
+    
     fileprivate func bind(row: Row) {
-
+        
         let footerRow = row as! FooterRow
         totalLabel.text = footerRow.total
         setBackgroundColour(odd: footerRow.odd)
+    }
+}
+
+class GrandFooterCell: UITableViewCell, TransactionCell {
+    
+    @IBOutlet private var totalLabel: UILabel!
+    
+    fileprivate func bind(row: Row) {
+        
+        let grandFooterRow = row as! GrandFooterRow
+        totalLabel.text = grandFooterRow.grandTotal
     }
 }
 
@@ -163,6 +179,7 @@ private enum CellId: String {
     case detail
     case subfooter
     case footer
+    case grandfooter
     case message
 }
 
@@ -217,6 +234,14 @@ private struct FooterRow: Row {
     let cellId: CellId = .footer
     let height: CGFloat = 44.0
 }
+
+private struct GrandFooterRow: Row {
+    
+    let grandTotal: String
+    let cellId: CellId = .grandfooter
+    let height: CGFloat = 60.0
+}
+
 
 private struct MessageRow: Row {
 

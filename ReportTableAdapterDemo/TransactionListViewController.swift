@@ -6,6 +6,8 @@ import UIKit
     
     @IBOutlet var tableView: UITableView!
     @IBOutlet weak var adapter: TransactionListAdapter!
+    
+    private var grandTotal = 0.0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,6 +19,7 @@ import UIKit
 
         appendTransactions(transactions: authorizedData, title: "Authorized")
         appendTransactions(transactions: postedData, title: "Posted")
+        adapter.appendGrandFooter( grandTotal: String(grandTotal) )
     }
 
     private func appendTransactions(transactions: [TransactionModel]?, title: String) {
@@ -51,6 +54,7 @@ import UIKit
                 adapter.appendSubfooter()
             }
             adapter.appendFooter(total: String(total) )
+            grandTotal += total
         }
         else {
             adapter.appendMessage(message: "\(title) Transactions are not currently available. You might want to call us and tell us what you think of that!")
