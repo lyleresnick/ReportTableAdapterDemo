@@ -4,8 +4,8 @@ import UIKit
 
  class TransactionListViewController: UIViewController {
     
-    @IBOutlet var tableView: UITableView!
-    @IBOutlet weak var adapter: TransactionListAdapter!
+    @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private weak var adapter: TransactionListAdapter!
     
     private var grandTotal = 0.0
 
