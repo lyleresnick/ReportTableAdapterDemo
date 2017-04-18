@@ -12,17 +12,17 @@ import UIKit
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        initializeFromTwoStreams()
+        transformFromTwoStreams()
     }
 
-    private func initializeFromTwoStreams() {
+    private func transformFromTwoStreams() {
 
-        appendTransactions(transactions: authorizedData, title: "Authorized")
-        appendTransactions(transactions: postedData, title: "Posted")
+        appendSection(transactions: authorizedData, title: "Authorized")
+        appendSection(transactions: postedData, title: "Posted")
         adapter.appendGrandFooter( grandTotal: String(grandTotal) )
     }
 
-    private func appendTransactions(transactions: [TransactionModel]?, title: String) {
+    private func appendSection(transactions: [TransactionModel]?, title: String) {
 
         adapter.appendHeader( title: "\(title) Transactions" )
 
@@ -33,21 +33,21 @@ import UIKit
             i += 1
             var total = 0.0
 
-            while let localCurTransaction = curTransaction  {
+            while curTransaction != nil  {
 
-                let curDate = localCurTransaction.date
+                let curDate = curTransaction!.date
                 adapter.appendSubheader(date: curDate)
-                while let localCurTransaction = curTransaction, localCurTransaction.date == curDate  {
+                while curTransaction != nil && curTransaction!.date == curDate  {
 
                     var amount: String
-                    if (localCurTransaction.debit != "D") {
-                        amount = "-" + localCurTransaction.amount
+                    if (curTransaction!.debit != "D") {
+                        amount = "-" + curTransaction!.amount
                     }
                     else {
-                        amount = localCurTransaction.amount
+                        amount = curTransaction!.amount
                     }
                     total += Double(amount)!
-                    adapter.appendDetail(description: localCurTransaction.description, amount: amount )
+                    adapter.appendDetail(description: curTransaction!.description, amount: amount )
                     curTransaction = ( i < transactions.count ) ? transactions[ i ] : nil
                     i += 1
                 }
@@ -57,7 +57,7 @@ import UIKit
             grandTotal += total
         }
         else {
-            adapter.appendMessage(message: "\(title) Transactions are not currently available. You might want to call us and tell us what you think of that!")
+            adapter.appendNotFoundMessage(message: "\(title) Transactions are not currently available. You might want to call us and tell us what you think of that!")
         }
     }
 }

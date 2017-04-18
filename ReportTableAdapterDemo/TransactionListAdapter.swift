@@ -5,15 +5,19 @@ import UIKit
 class TransactionListAdapter: NSObject {
 
     fileprivate var rowList = [Row]()
-    private var odd = false
+    fileprivate var odd = false
 
     fileprivate static func dateFormat(format: String ) -> DateFormatter {
         let formatter = DateFormatter()
         formatter.dateFormat = format
         return formatter
     }
+}
+
+extension TransactionListAdapter: TransactionListTransformerOutput {
     
     private static let inboundDateFormat = TransactionListAdapter.dateFormat( format: "yyyy'-'MM'-'dd" )
+    
 
     func appendHeader(title: String ) {
         rowList.append( HeaderRow( title: title ) )
@@ -45,7 +49,7 @@ class TransactionListAdapter: NSObject {
         rowList.append(GrandFooterRow(grandTotal: grandTotal))
     }
     
-    func appendMessage(message: String) {
+    func appendNotFoundMessage(message: String) {
         rowList.append(MessageRow(message: message))
     }
 }

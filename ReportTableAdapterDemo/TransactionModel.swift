@@ -4,11 +4,11 @@ import Foundation
 
 struct TransactionModel {
 
-    var group: String
-    var date: String;
-    var description: String
-    var amount: String
-    var debit: String
+    let group: String
+    let date: String;
+    let description: String
+    let amount: String
+    let debit: String
 }
 
 let authorizedData = [
