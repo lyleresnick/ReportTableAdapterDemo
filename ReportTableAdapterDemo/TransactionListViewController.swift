@@ -28,31 +28,36 @@ import UIKit
 
         if let transactions = transactions  {
 
-            var i = 0
-            var transaction = next(transactions: transactions, i: &i )
-            var total = 0.0
-
-            while transaction != nil  {
-
-                let curDate = transaction!.date
-                adapter.appendSubheader(date: curDate)
-                while transaction != nil && transaction!.date == curDate  {
-
-                    var amount: String
-                    if (transaction!.debit != "D") {
-                        amount = "-" + transaction!.amount
-                    }
-                    else {
-                        amount = transaction!.amount
-                    }
-                    total += Double(amount)!
-                    adapter.appendDetail(description: transaction!.description, amount: amount )
-                    transaction = next(transactions: transactions, i: &i )
-                }
-                adapter.appendSubfooter()
+            if transactions.count == 0 {
+                adapter.appendMessage(message: "There are no \(title) Transactions in this period")
             }
-            adapter.appendFooter(total: String(total) )
-            grandTotal += total
+            else {
+                var i = 0
+                var transaction = next(transactions: transactions, i: &i )
+                var total = 0.0
+
+                while transaction != nil  {
+
+                    let curDate = transaction!.date
+                    adapter.appendSubheader(date: curDate)
+                    while transaction != nil && transaction!.date == curDate  {
+
+                        var amount: String
+                        if (transaction!.debit != "D") {
+                            amount = "-" + transaction!.amount
+                        }
+                        else {
+                            amount = transaction!.amount
+                        }
+                        total += Double(amount)!
+                        adapter.appendDetail(description: transaction!.description, amount: amount )
+                        transaction = next(transactions: transactions, i: &i )
+                    }
+                    adapter.appendSubfooter()
+                }
+                adapter.appendFooter(total: String(total) )
+                grandTotal += total
+            }
         }
         else {
             adapter.appendMessage(message: "\(title) Transactions are not currently available. You might want to call us and tell us what you think of that!")

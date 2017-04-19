@@ -170,7 +170,7 @@ class MessageCell: UITableViewCell, TransactionCell {
 
         let messageRow = row as! MessageRow
         messageLabel.text = messageRow.message
-        setBackgroundColour(odd: false)
+        setBackgroundColour(odd: true)
     }
 }
 
