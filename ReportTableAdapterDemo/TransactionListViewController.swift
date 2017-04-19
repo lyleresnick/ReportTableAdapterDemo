@@ -29,27 +29,25 @@ import UIKit
         if let transactions = transactions  {
 
             var i = 0
-            var curTransaction = ( i < transactions.count ) ? transactions[ i ] : nil
-            i += 1
+            var transaction = next(transactions: transactions, i: &i )
             var total = 0.0
 
-            while curTransaction != nil  {
+            while transaction != nil  {
 
-                let curDate = curTransaction!.date
+                let curDate = transaction!.date
                 adapter.appendSubheader(date: curDate)
-                while curTransaction != nil && curTransaction!.date == curDate  {
+                while transaction != nil && transaction!.date == curDate  {
 
                     var amount: String
-                    if (curTransaction!.debit != "D") {
-                        amount = "-" + curTransaction!.amount
+                    if (transaction!.debit != "D") {
+                        amount = "-" + transaction!.amount
                     }
                     else {
-                        amount = curTransaction!.amount
+                        amount = transaction!.amount
                     }
                     total += Double(amount)!
-                    adapter.appendDetail(description: curTransaction!.description, amount: amount )
-                    curTransaction = ( i < transactions.count ) ? transactions[ i ] : nil
-                    i += 1
+                    adapter.appendDetail(description: transaction!.description, amount: amount )
+                    transaction = next(transactions: transactions, i: &i )
                 }
                 adapter.appendSubfooter()
             }
@@ -57,8 +55,15 @@ import UIKit
             grandTotal += total
         }
         else {
-            adapter.appendNotFoundMessage(message: "\(title) Transactions are not currently available. You might want to call us and tell us what you think of that!")
+            adapter.appendMessage(message: "\(title) Transactions are not currently available. You might want to call us and tell us what you think of that!")
         }
+    }
+    
+    private func next(transactions: [TransactionModel], i: inout Int ) ->TransactionModel? {
+        
+        let transaction = ( i < transactions.count ) ? transactions[ i ] : nil
+        i += 1
+        return transaction
     }
 }
 

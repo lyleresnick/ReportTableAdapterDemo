@@ -49,7 +49,7 @@ extension TransactionListAdapter: TransactionListTransformerOutput {
         rowList.append(GrandFooterRow(grandTotal: grandTotal))
     }
     
-    func appendNotFoundMessage(message: String) {
+    func appendMessage(message: String) {
         rowList.append(MessageRow(message: message))
     }
 }
