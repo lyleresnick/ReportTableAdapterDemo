@@ -6,19 +6,12 @@ class TransactionListAdapter: NSObject {
 
     fileprivate var rowList = [Row]()
     fileprivate var odd = false
-
-    fileprivate static func dateFormat(format: String ) -> DateFormatter {
-        let formatter = DateFormatter()
-        formatter.dateFormat = format
-        return formatter
-    }
 }
 
 extension TransactionListAdapter: TransactionListTransformerOutput {
     
-    private static let inboundDateFormat = TransactionListAdapter.dateFormat( format: "yyyy'-'MM'-'dd" )
+    private static let inboundDateFormat = DateFormatter.dateFormatter( format: "yyyy'-'MM'-'dd" )
     
-
     func appendHeader(title: String ) {
         rowList.append( HeaderRow( title: title ) )
     }
@@ -201,7 +194,7 @@ private struct HeaderRow: Row {
 
 private struct SubheaderRow: Row {
 
-    private static let outboundDateFormat = TransactionListAdapter.dateFormat( format: "MMM' 'dd', 'yyyy" )
+    private static let outboundDateFormat = DateFormatter.dateFormatter( format: "MMM' 'dd', 'yyyy" )
 
     let title:  String
     let odd: Bool
@@ -253,3 +246,13 @@ private struct MessageRow: Row {
     let cellId: CellId = .message
     let height: CGFloat = 100.0
 }
+
+extension DateFormatter {
+
+    static func dateFormatter(format: String ) -> DateFormatter {
+        let formatter = DateFormatter()
+        formatter.dateFormat = format
+        return formatter
+    }
+}
+
