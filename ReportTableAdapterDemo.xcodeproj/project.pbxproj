@@ -83,12 +83,12 @@
 		B3E8AE601E711F7E00133D76 /* ReportTableAdapterDemo */ = {
 			isa = PBXGroup;
 			children = (
-				B348D6E81EB80A3600BC010E /* DateFormatter+Format.swift */,
 				B339F1331EA6C7F6007A0666 /* TransactionListTransformerOutput.swift */,
 				B3E8AE821E711FC800133D76 /* TransactionListViewController.swift */,
 				B3E8AE811E711FC800133D76 /* TransactionListAdapter.swift */,
-				B3E8AE831E711FC800133D76 /* Color.swift */,
 				B3E8AE841E711FC800133D76 /* TransactionModel.swift */,
+				B3E8AE831E711FC800133D76 /* Color.swift */,
+				B348D6E81EB80A3600BC010E /* DateFormatter+Format.swift */,
 				B3E8AE611E711F7E00133D76 /* AppDelegate.swift */,
 				B3E8AE651E711F7E00133D76 /* Main.storyboard */,
 				B3E8AE681E711F7E00133D76 /* Assets.xcassets */,

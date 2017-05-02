@@ -10,12 +10,12 @@ class TransactionListAdapter: NSObject {
 
 extension TransactionListAdapter: TransactionListTransformerOutput {
     
-    private static let inboundDateFormat = DateFormatter.dateFormatter( format: "yyyy'-'MM'-'dd" )
-    
     func appendHeader(title: String ) {
         rowList.append( HeaderRow( title: title ) )
     }
 
+    private static let inboundDateFormat = DateFormatter.dateFormatter( format: "yyyy'-'MM'-'dd" )
+    
     func appendSubheader(date inboundDate: String) {
 
         odd = !odd
@@ -45,6 +45,85 @@ extension TransactionListAdapter: TransactionListTransformerOutput {
     func appendMessage(message: String) {
         rowList.append(MessageRow(message: message))
     }
+}
+
+// MARK: - Rows
+
+private enum CellId: String {
+    
+    case header
+    case subheader
+    case detail
+    case subfooter
+    case footer
+    case grandfooter
+    case message
+}
+
+private protocol Row {
+    var cellId: CellId { get }
+    var height: CGFloat { get }
+}
+
+private struct HeaderRow: Row {
+    
+    let title:  String
+    let cellId: CellId = .header
+    let height: CGFloat = 60.0
+}
+
+private struct SubheaderRow: Row {
+    
+    private static let outboundDateFormat = DateFormatter.dateFormatter( format: "MMM' 'dd', 'yyyy" )
+    
+    let title:  String
+    let odd: Bool
+    let cellId: CellId = .subheader
+    let height: CGFloat = 34.0
+    
+    init(date: Date, odd: Bool) {
+        
+        self.odd = odd
+        title = SubheaderRow.outboundDateFormat.string(from: date ).uppercased()
+    }
+}
+
+private struct DetailRow: Row {
+    
+    let description: String
+    let amount: String
+    let odd: Bool
+    let cellId: CellId = .detail
+    let height: CGFloat = 18.0
+}
+
+private struct SubfooterRow: Row {
+    
+    let odd: Bool
+    let cellId: CellId = .subfooter
+    let height: CGFloat = 18.0
+}
+
+private struct FooterRow: Row {
+    
+    let total: String
+    let odd: Bool
+    let cellId: CellId = .footer
+    let height: CGFloat = 44.0
+}
+
+private struct GrandFooterRow: Row {
+    
+    let grandTotal: String
+    let cellId: CellId = .grandfooter
+    let height: CGFloat = 60.0
+}
+
+private struct MessageRow: Row {
+    
+    let message: String
+    let cellId: CellId = .message
+    let height: CGFloat = 100.0
 }
 
 extension TransactionListAdapter: UITableViewDataSource {
@@ -167,84 +246,5 @@ class MessageCell: UITableViewCell, TransactionCell {
     }
 }
 
-// MARK: - Rows
-
-private enum CellId: String {
-    
-    case header
-    case subheader
-    case detail
-    case subfooter
-    case footer
-    case grandfooter
-    case message
-}
-
-private protocol Row {
-    var cellId: CellId { get }
-    var height: CGFloat { get }
-}
-
-private struct HeaderRow: Row {
-    
-    let title:  String
-    let cellId: CellId = .header
-    let height: CGFloat = 60.0
-}
-
-private struct SubheaderRow: Row {
-
-    private static let outboundDateFormat = DateFormatter.dateFormatter( format: "MMM' 'dd', 'yyyy" )
-
-    let title:  String
-    let odd: Bool
-    let cellId: CellId = .subheader
-    let height: CGFloat = 34.0
-
-    init(date: Date, odd: Bool) {
-
-        self.odd = odd
-        title = SubheaderRow.outboundDateFormat.string(from: date ).uppercased()
-    }
-}
-
-private struct DetailRow: Row {
-
-    let description: String
-    let amount: String
-    let odd: Bool
-    let cellId: CellId = .detail
-    let height: CGFloat = 18.0
-}
-
-private struct SubfooterRow: Row {
-
-    let odd: Bool
-    let cellId: CellId = .subfooter
-    let height: CGFloat = 18.0
-}
-
-private struct FooterRow: Row {
-
-    let total: String
-    let odd: Bool
-    let cellId: CellId = .footer
-    let height: CGFloat = 44.0
-}
-
-private struct GrandFooterRow: Row {
-    
-    let grandTotal: String
-    let cellId: CellId = .grandfooter
-    let height: CGFloat = 60.0
-}
-
-
-private struct MessageRow: Row {
-
-    let message: String
-    let cellId: CellId = .message
-    let height: CGFloat = 100.0
-}
 
 
