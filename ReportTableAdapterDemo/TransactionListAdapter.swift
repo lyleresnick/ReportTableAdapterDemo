@@ -247,12 +247,4 @@ private struct MessageRow: Row {
     let height: CGFloat = 100.0
 }
 
-extension DateFormatter {
-
-    static func dateFormatter(format: String ) -> DateFormatter {
-        let formatter = DateFormatter()
-        formatter.dateFormat = format
-        return formatter
-    }
-}
 
