@@ -8,6 +8,8 @@ class TransactionListAdapter: NSObject {
     fileprivate var odd = false
 }
 
+// MARK: - TransactionListTransformerOutput
+
 extension TransactionListAdapter: TransactionListTransformerOutput {
     
     func appendHeader(title: String ) {
@@ -120,6 +122,8 @@ private struct MessageRow: Row {
     let height: CGFloat = 100.0
 }
 
+// MARK: - UITableViewDataSource
+
 extension TransactionListAdapter: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -135,6 +139,8 @@ extension TransactionListAdapter: UITableViewDataSource {
         return rowList.count 
     }
 }
+
+// MARK: - UITableViewDelegate
 
 extension TransactionListAdapter: UITableViewDelegate {
 
