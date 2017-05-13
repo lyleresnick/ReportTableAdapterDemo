@@ -15,12 +15,14 @@ extension TransactionListAdapter: TransactionListTransformerOutput {
     }
 
     private static let inboundDateFormat = DateFormatter.dateFormatter( format: "yyyy'-'MM'-'dd" )
+    private static let outboundDateFormat = DateFormatter.dateFormatter( format: "MMM' 'dd', 'yyyy" )
     
     func appendSubheader(date inboundDate: String) {
 
         odd = !odd
         let date = TransactionListAdapter.inboundDateFormat.date( from: inboundDate)!
-        rowList.append( SubheaderRow( date: date, odd: odd ) )
+        let dateString = TransactionListAdapter.outboundDateFormat.string(from: date ).uppercased()
+        rowList.append( SubheaderRow( title: dateString, odd: odd ) )
     }
 
     func appendDetail( description: String, amount: String ) {
@@ -74,18 +76,10 @@ private struct HeaderRow: Row {
 
 private struct SubheaderRow: Row {
     
-    private static let outboundDateFormat = DateFormatter.dateFormatter( format: "MMM' 'dd', 'yyyy" )
-    
     let title:  String
     let odd: Bool
     let cellId: CellId = .subheader
     let height: CGFloat = 34.0
-    
-    init(date: Date, odd: Bool) {
-        
-        self.odd = odd
-        title = SubheaderRow.outboundDateFormat.string(from: date ).uppercased()
-    }
 }
 
 private struct DetailRow: Row {
