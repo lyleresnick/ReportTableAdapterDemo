@@ -12,10 +12,10 @@ import UIKit
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        transformFromTwoStreams()
+        transformFromTwoSources()
     }
 
-    private func transformFromTwoStreams() {
+    private func transformFromTwoSources() {
 
         appendSection(transactions: authorizedData, title: "Authorized")
         appendSection(transactions: postedData, title: "Posted")
