@@ -60,7 +60,7 @@ import UIKit
             }
         }
         else {
-            adapter.appendMessage(message: "\(title) Transactions are not currently available. You might want to call us and tell us what you think of that!")
+            adapter.appendMessage(message: "\(title) Transactions are not currently available.")
         }
     }
     
