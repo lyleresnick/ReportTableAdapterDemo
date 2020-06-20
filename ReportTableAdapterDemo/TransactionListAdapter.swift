@@ -66,14 +66,12 @@ private enum CellId: String {
 
 private protocol Row {
     var cellId: CellId { get }
-    var height: CGFloat { get }
 }
 
 private struct HeaderRow: Row {
     
     let title:  String
     let cellId: CellId = .header
-    let height: CGFloat = 60.0
 }
 
 private struct SubheaderRow: Row {
@@ -81,7 +79,6 @@ private struct SubheaderRow: Row {
     let title:  String
     let odd: Bool
     let cellId: CellId = .subheader
-    let height: CGFloat = 34.0
 }
 
 private struct DetailRow: Row {
@@ -90,14 +87,12 @@ private struct DetailRow: Row {
     let amount: String
     let odd: Bool
     let cellId: CellId = .detail
-    let height: CGFloat = 18.0
 }
 
 private struct SubfooterRow: Row {
     
     let odd: Bool
     let cellId: CellId = .subfooter
-    let height: CGFloat = 18.0
 }
 
 private struct FooterRow: Row {
@@ -105,21 +100,18 @@ private struct FooterRow: Row {
     let total: String
     let odd: Bool
     let cellId: CellId = .footer
-    let height: CGFloat = 44.0
 }
 
 private struct GrandFooterRow: Row {
     
     let grandTotal: String
     let cellId: CellId = .grandfooter
-    let height: CGFloat = 60.0
 }
 
 private struct MessageRow: Row {
     
     let message: String
     let cellId: CellId = .message
-    let height: CGFloat = 100.0
 }
 
 // MARK: - UITableViewDataSource
@@ -137,15 +129,6 @@ extension TransactionListAdapter: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return rowList.count 
-    }
-}
-
-// MARK: - UITableViewDelegate
-
-extension TransactionListAdapter: UITableViewDelegate {
-
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return rowList[ indexPath.row ].height
     }
 }
 

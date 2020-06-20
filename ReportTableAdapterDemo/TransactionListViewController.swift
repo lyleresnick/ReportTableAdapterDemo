@@ -19,7 +19,7 @@ import UIKit
 
         appendSection(transactions: authorizedData, title: "Authorized")
         appendSection(transactions: postedData, title: "Posted")
-        adapter.appendGrandFooter( grandTotal: String(grandTotal) )
+        adapter.appendGrandFooter( grandTotal: grandTotal.asString )
     }
 
     private func appendSection(transactions: [TransactionModel]?, title: String) {
@@ -55,7 +55,7 @@ import UIKit
                     }
                     adapter.appendSubfooter()
                 }
-                adapter.appendFooter(total: String(total) )
+                adapter.appendFooter(total: total.asString )
                 grandTotal += total
             }
         }
@@ -69,6 +69,14 @@ import UIKit
         let transaction = ( i < transactions.count ) ? transactions[ i ] : nil
         i += 1
         return transaction
+    }
+}
+
+// MARK: -
+
+private extension Double {
+    var asString: String {
+        return String(format: "%0.2f", self)
     }
 }
 

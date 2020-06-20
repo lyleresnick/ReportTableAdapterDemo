@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		B339F1341EA6C7F6007A0666 /* TransactionListTransformerOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B339F1331EA6C7F6007A0666 /* TransactionListTransformerOutput.swift */; };
 		B348D6E91EB80A3600BC010E /* DateFormatter+Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = B348D6E81EB80A3600BC010E /* DateFormatter+Format.swift */; };
+		B3B97F79249E88EF00C0118F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3B97F78249E88EF00C0118F /* Main.storyboard */; };
 		B3E8AE621E711F7E00133D76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E8AE611E711F7E00133D76 /* AppDelegate.swift */; };
-		B3E8AE671E711F7E00133D76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3E8AE651E711F7E00133D76 /* Main.storyboard */; };
 		B3E8AE691E711F7E00133D76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3E8AE681E711F7E00133D76 /* Assets.xcassets */; };
 		B3E8AE6C1E711F7E00133D76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3E8AE6A1E711F7E00133D76 /* LaunchScreen.storyboard */; };
 		B3E8AE851E711FC800133D76 /* TransactionListAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E8AE811E711FC800133D76 /* TransactionListAdapter.swift */; };
@@ -32,9 +32,9 @@
 /* Begin PBXFileReference section */
 		B339F1331EA6C7F6007A0666 /* TransactionListTransformerOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionListTransformerOutput.swift; sourceTree = "<group>"; };
 		B348D6E81EB80A3600BC010E /* DateFormatter+Format.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Format.swift"; sourceTree = "<group>"; };
+		B3B97F78249E88EF00C0118F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B3E8AE5E1E711F7E00133D76 /* ReportTableAdapterDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReportTableAdapterDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3E8AE611E711F7E00133D76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B3E8AE661E711F7E00133D76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B3E8AE681E711F7E00133D76 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B3E8AE6B1E711F7E00133D76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B3E8AE6D1E711F7E00133D76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -90,9 +90,9 @@
 				B3E8AE831E711FC800133D76 /* Color.swift */,
 				B348D6E81EB80A3600BC010E /* DateFormatter+Format.swift */,
 				B3E8AE611E711F7E00133D76 /* AppDelegate.swift */,
-				B3E8AE651E711F7E00133D76 /* Main.storyboard */,
 				B3E8AE681E711F7E00133D76 /* Assets.xcassets */,
 				B3E8AE6A1E711F7E00133D76 /* LaunchScreen.storyboard */,
+				B3B97F78249E88EF00C0118F /* Main.storyboard */,
 				B3E8AE6D1E711F7E00133D76 /* Info.plist */,
 			);
 			path = ReportTableAdapterDemo;
@@ -183,9 +183,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3B97F79249E88EF00C0118F /* Main.storyboard in Resources */,
 				B3E8AE6C1E711F7E00133D76 /* LaunchScreen.storyboard in Resources */,
 				B3E8AE691E711F7E00133D76 /* Assets.xcassets in Resources */,
-				B3E8AE671E711F7E00133D76 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,14 +231,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		B3E8AE651E711F7E00133D76 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B3E8AE661E711F7E00133D76 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		B3E8AE6A1E711F7E00133D76 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
